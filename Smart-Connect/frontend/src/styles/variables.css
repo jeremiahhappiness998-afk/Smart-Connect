@@ -1,0 +1,32 @@
+:root {
+  /* Colors */
+  --primary-color: #667eea;
+  --primary-dark: #5a67d8;
+  --primary-light: #764ba2;
+  --whatsapp-green: #25D366;
+  --whatsapp-dark: #128C7E;
+  --success: #27ae60;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --background-light: #f5f5f5;
+  --white: #ffffff;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,56 @@
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.2em; }
+  
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Tablets (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.8em; }
+  
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* Small laptops (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Large laptops and desktops (1025px and up) */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  button, 
+  .btn,
+  .order-btn,
+  .product-card {
+    cursor: default;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  button:active,
+  .btn:active,
+  .order-btn:active {
+    opacity: 0.7;
+  }
+}

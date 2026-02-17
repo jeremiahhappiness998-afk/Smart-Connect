@@ -1,0 +1,270 @@
+.registration-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.registration-card {
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.registration-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.registration-header h1 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+.registration-header p {
+  color: #666;
+  font-size: 1.1em;
+}
+
+/* Progress Steps */
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.step {
+  position: relative;
+  z-index: 2;
+  background: white;
+  text-align: center;
+  flex: 1;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #e0e0e0;
+  color: #666;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.step.active .step-number {
+  background: #25D366;
+  color: white;
+  box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.step-label {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.step.active .step-label {
+  color: #25D366;
+  font-weight: 600;
+}
+
+/* Form Styles */
+.form-step {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #444;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.hint {
+  display: block;
+  margin-top: 5px;
+  color: #888;
+  font-size: 0.85em;
+}
+
+/* Buttons */
+.btn-next,
+.btn-back,
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-next {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+}
+
+.btn-next:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-back {
+  background: #e0e0e0;
+  color: #666;
+  flex: 1;
+}
+
+.btn-back:hover {
+  background: #d0d0d0;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  flex: 2;
+}
+
+.btn-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+}
+
+.btn-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Error Message */
+.error-message {
+  background-color: #fee;
+  color: #e74c3c;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border-left: 4px solid #e74c3c;
+  font-size: 0.95em;
+}
+
+/* Footer */
+.registration-footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9em;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .registration-card {
+    padding: 25px;
+  }
+  
+  .registration-header h1 {
+    font-size: 1.6em;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .step-label {
+    font-size: 0.8em;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .btn-back,
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+/* Touch Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn-next,
+  .btn-back,
+  .btn-submit {
+    cursor: default;
+  }
+  
+  .btn-next:active,
+  .btn-back:active,
+  .btn-submit:active {
+    transform: scale(0.98);
+  }
+}

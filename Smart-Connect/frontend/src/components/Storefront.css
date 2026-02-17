@@ -1,0 +1,415 @@
+/* Storefront.css - Enhanced with better mobile styling for Nigerian users */
+
+.storefront {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #f8f9fa;
+}
+
+/* Store Header */
+.store-header {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.store-header h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.store-header .description {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+  opacity: 0.95;
+  line-height: 1.6;
+}
+
+.store-header .whatsapp {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 1.1em;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Products Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Product Card */
+.product-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #eee;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #f5f5f5;
+}
+
+.product-card h3 {
+  padding: 16px 16px 8px;
+  margin: 0;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.product-card .description {
+  padding: 0 16px;
+  margin: 0 0 12px;
+  color: #666;
+  font-size: 0.95em;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.product-card .price {
+  padding: 0 16px;
+  margin: 0 0 16px;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #25D366;
+}
+
+.order-btn {
+  margin: 0 16px 16px;
+  padding: 14px;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.order-btn:hover {
+  background-color: #128C7E;
+}
+
+.order-btn::before {
+  content: "📱";
+  font-size: 1.2em;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background-color: white;
+  margin: 10% auto;
+  padding: 25px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  animation: slideIn 0.3s ease;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  transition: color 0.3s;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close:hover {
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+.modal h2 {
+  margin-bottom: 25px;
+  color: #333;
+  padding-right: 30px;
+  font-size: 1.6em;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: #fafafa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #25D366;
+  background-color: white;
+  box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.1);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.total {
+  font-size: 1.4em;
+  font-weight: 700;
+  text-align: right;
+  margin: 25px 0;
+  padding: 15px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 10px;
+  color: #25D366;
+}
+
+.submit-order-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.submit-order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+}
+
+.submit-order-btn::after {
+  content: "➤";
+  font-size: 1.2em;
+}
+
+/* Loader */
+.loader {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+.loader::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #25D366;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Empty State */
+.no-products {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+  color: #999;
+}
+
+.no-products p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .store-header h1 {
+    font-size: 1.8em;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .modal-content {
+    margin: 5% auto;
+    padding: 20px;
+    width: 95%;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 16px; /* Larger touch target */
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  .close {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .store-header {
+    padding: 20px 15px;
+  }
+  
+  .store-header h1 {
+    font-size: 1.5em;
+  }
+  
+  .product-card h3 {
+    font-size: 1.2em;
+  }
+  
+  .product-card .price {
+    font-size: 1.2em;
+  }
+  
+  .modal h2 {
+    font-size: 1.4em;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  .order-btn,
+  .submit-order-btn,
+  .close {
+    cursor: default;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .order-btn:active,
+  .submit-order-btn:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+  
+  .product-card {
+    cursor: default;
+  }
+  
+  input, textarea, button {
+    font-size: 16px !important; /* Prevents zoom on focus */
+  }
+}
+
+/* Nigerian Naira symbol styling */
+.price::before {
+  content: "₦";
+  margin-right: 2px;
+}
+
+/* Success message animation */
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.order-success {
+  text-align: center;
+  padding: 20px;
+  color: #27ae60;
+  animation: successPulse 0.5s ease;
+}
+
+.order-success::before {
+  content: "✅";
+  display: block;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
